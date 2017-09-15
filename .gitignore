@@ -1,0 +1,25 @@
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+/.idea/file.template.settings.xml
+.DS_Store
+/build
+infer-out/
+*.iml
+
+# Fastlane
+fastlane/report.xml
+fastlane/test_output/report.html
+fastlane/Appfile
+
+#vcs integration
+/.idea/vcs.xml
+
+#Sensitive data
+gradle.properties
+
+#Captures
+captures/
+
+*.keystore
