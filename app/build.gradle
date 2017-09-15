@@ -33,4 +33,5 @@ dependencies {
     })
     compile "com.android.support:appcompat-v7:$appcompatVersion"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
