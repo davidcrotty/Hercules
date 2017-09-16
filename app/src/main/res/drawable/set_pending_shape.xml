@@ -6,8 +6,8 @@
             android:shape="ring"
             android:thickness="1sp"
             xmlns:android="http://schemas.android.com/apk/res/android">
-            <solid android:color="@color/progress_background" />
-            <stroke android:color="@color/progress_background" />
+            <solid android:color="@color/progressBackground" />
+            <stroke android:color="@color/progressBackground" />
         </shape>
     </item>
     <item android:id="@android:id/progress">

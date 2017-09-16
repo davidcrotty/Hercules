@@ -84,6 +84,7 @@
             </net.davidcrotty.hercules.view.RepProgressView>
 
             <net.davidcrotty.hercules.view.RepProgressView
+                android:id="@+id/inProgressRep"
                 android:layout_width="52dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="8dp"
@@ -118,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintGuide_percent="0.4"
-                tools:layout_editor_absoluteY="107dp"
+                tools:layout_editor_absoluteY="100dp"
                 tools:layout_editor_absoluteX="0dp" />
 
             <ProgressBar
@@ -176,7 +177,8 @@
             android:layout_marginTop="16dp"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/timer_panel" />
+            app:layout_constraintTop_toBottomOf="@+id/timer_panel"
+            tools:layout_editor_absoluteX="151dp" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/play_pause_toggle"
@@ -196,7 +198,7 @@
             android:id="@+id/guideline"
             app:layout_constraintGuide_begin="640dp"
             android:orientation="horizontal"
-            tools:layout_editor_absoluteY="1081dp"
+            tools:layout_editor_absoluteY="721dp"
             tools:layout_editor_absoluteX="0dp" />
 
         <TextView
@@ -206,10 +208,9 @@
             android:fontFamily="sans-serif"
             android:textSize="16sp"
             android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
             android:textColor="@color/subtitleText"
             android:text="Next: 30s Rest"
-            app:layout_constraintTop_toBottomOf="@id/play_pause_toggle"
+            app:layout_constraintTop_toBottomOf="@+id/play_pause_toggle"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent"
             tools:layout_editor_absoluteX="141dp" />

@@ -17,6 +17,12 @@ import kotlinx.android.synthetic.main.rep_progress.view.*
 class RepProgressView : FrameLayout {
 
     private var state: Int? = null
+    var progress: Int = 0
+        set(value) {
+            field = value
+            progress_task.progress = value
+        }
+    var max: Int = 10
 
     constructor(context: Context) : super(context) {
         init(context)

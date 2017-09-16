@@ -20,17 +20,12 @@
         android:visibility="gone"
         app:srcCompat="@drawable/set_done"/>
 
-    <ProgressBar
+    <net.davidcrotty.hercules.view.PieProgressView
         android:id="@+id/progress_task"
         android:visibility="gone"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:progressDrawable="@drawable/set_progress_shape"
-        android:min="0"
-        android:max="10"
-        android:progress="3"
-        android:layout_gravity="center|center"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+    </net.davidcrotty.hercules.view.PieProgressView>
 
     <TextView
         android:id="@+id/order_text"

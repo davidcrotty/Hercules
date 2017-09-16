@@ -20,5 +20,7 @@ class ExerciseActivity : AppCompatActivity() {
 
         progress_countdown.max = 10
         progress_countdown.progress = 4
+
+        inProgressRep.progress = 3
     }
 }
