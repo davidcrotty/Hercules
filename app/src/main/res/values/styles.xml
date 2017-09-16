@@ -1,8 +1,10 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Design does not have a colour Primary and secondary in accordance to googles material guidelines
+        adapt both to be the window background for this activity -->
+        <item name="colorPrimary">@color/windowBackgroundExercise</item>
+        <item name="colorPrimaryDark">@color/windowBackgroundExercise</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
