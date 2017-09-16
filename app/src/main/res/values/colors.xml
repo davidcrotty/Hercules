@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<!-- UnusedResources reason: color lightGreen is used in PieProgressView -->
+<resources tools:ignore="UnusedResources" xmlns:tools="http://schemas.android.com/tools">
     <color name="colorAccent">#7FD219</color>
     <color name="windowBackgroundExercise">#1A2023</color>
     <color name="titleText">#E5E7E7</color>

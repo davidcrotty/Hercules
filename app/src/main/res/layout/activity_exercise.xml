@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- UnusedResources reason: colors are referred to as unused-->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:ignore="UnusedResources"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,11 +10,7 @@
     android:orientation="vertical"
     android:fillViewport="true">
 
-    <!-- UnusedResources reason: colors are referred to as unused-->
-    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        tools:ignore="UnusedResources"
+    <android.support.constraint.ConstraintLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -157,6 +155,7 @@
             <ImageView
                 android:layout_width="68dp"
                 android:layout_height="48dp"
+                android:contentDescription="set icon"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/icon_guide"
@@ -170,7 +169,7 @@
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/titleText"
                 android:text="3"
-                android:textSize="96dp"
+                android:textSize="96sp"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/icon_guide"
@@ -194,6 +193,7 @@
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/play_pause_toggle"
+            android:contentDescription="play pause toggle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -207,6 +207,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginTop="9dp"
+            android:contentDescription="previous set"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/play_pause_toggle"
             android:layout_marginStart="24dp"
@@ -216,6 +217,7 @@
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:layout_marginTop="9dp"
+            android:contentDescription="next set"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/play_pause_toggle"
             android:layout_marginEnd="24dp"
