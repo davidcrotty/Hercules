@@ -17,7 +17,7 @@ import java.text.FieldPosition
  */
 class RepProgressView : FrameLayout {
 
-    private var state: Int? = null
+    private var state: SetState? = null
     private var position: Int = 0
     var progress: Int = 0
         set(value) {
@@ -48,7 +48,7 @@ class RepProgressView : FrameLayout {
         }
 
         state?.let {
-            updateStateTo(it)
+            updateStateTo(SetState.from(it))
         }
     }
 
@@ -57,20 +57,20 @@ class RepProgressView : FrameLayout {
         order_text.text = position.toString()
     }
 
-    fun updateStateTo(state: Int) {
+    fun updateStateTo(state: SetState) {
         this.state = state
         when(state) {
-            0 -> {
+            SetState.DONE -> {
                 done_icon.visibility = View.VISIBLE
                 order_text.visibility = View.GONE
                 progress_task.visibility = View.GONE
             }
-            1 -> {
+            SetState.IN_PROGRESS -> {
                 progress_task.visibility = View.VISIBLE
                 order_text.visibility = View.VISIBLE
                 done_icon.visibility = View.GONE
             }
-            2 -> {
+            SetState.PENDING -> {
                 pending_task.visibility = View.VISIBLE
                 order_text.visibility = View.VISIBLE
                 progress_task.visibility = View.GONE

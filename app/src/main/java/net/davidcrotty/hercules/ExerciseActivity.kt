@@ -10,6 +10,11 @@ import kotlinx.android.synthetic.main.activity_exercise.*
  * Copyright © 2017 David Crotty - All Rights Reserved
  */
 class ExerciseActivity : AppCompatActivity() {
+
+    companion object {
+        val SET_KEY = "SET_KEY"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise)
