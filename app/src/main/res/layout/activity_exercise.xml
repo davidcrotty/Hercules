@@ -21,7 +21,7 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_percent="0.2"
+            app:layout_constraintGuide_percent="0.18"
             tools:layout_editor_absoluteY="81dp"
             tools:layout_editor_absoluteX="77dp" />
 
@@ -30,7 +30,7 @@
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintGuide_percent="0.8"
+            app:layout_constraintGuide_percent="0.82"
             tools:layout_editor_absoluteY="81dp"
             tools:layout_editor_absoluteX="307dp" />
 
@@ -62,55 +62,62 @@
             app:layout_constraintStart_toEndOf="parent"
             tools:layout_editor_absoluteX="134dp" />
 
-        <LinearLayout
+        <HorizontalScrollView
             android:id="@+id/plan_track_list"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:gravity="center"
             android:layout_height="52dp"
             android:layout_marginTop="16dp"
             app:layout_constraintTop_toBottomOf="@+id/subtitle"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/end"
+            app:layout_constraintStart_toEndOf="@id/start"
             tools:layout_editor_absoluteX="92dp">
 
-            <net.davidcrotty.hercules.view.RepProgressView
-                android:id="@+id/doneRep"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                custom:state="done">
-            </net.davidcrotty.hercules.view.RepProgressView>
+            <LinearLayout
+                android:id="@+id/set_host"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <net.davidcrotty.hercules.view.RepProgressView
-                android:id="@+id/inProgressRep"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                custom:state="inprogress">
-            </net.davidcrotty.hercules.view.RepProgressView>
+                <net.davidcrotty.hercules.view.RepProgressView
+                    android:id="@+id/doneRep"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    custom:state="done">
+                </net.davidcrotty.hercules.view.RepProgressView>
 
-            <net.davidcrotty.hercules.view.RepProgressView
-                android:id="@+id/firstPendingRep"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                custom:state="pending">
-            </net.davidcrotty.hercules.view.RepProgressView>
+                <net.davidcrotty.hercules.view.RepProgressView
+                    android:id="@+id/inProgressRep"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    custom:state="inprogress">
+                </net.davidcrotty.hercules.view.RepProgressView>
 
-            <net.davidcrotty.hercules.view.RepProgressView
-                android:id="@+id/secondPendingRep"
-                android:layout_width="52dp"
-                android:layout_height="52dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                custom:state="pending">
-            </net.davidcrotty.hercules.view.RepProgressView>
+                <net.davidcrotty.hercules.view.RepProgressView
+                    android:id="@+id/firstPendingRep"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    custom:state="pending">
+                </net.davidcrotty.hercules.view.RepProgressView>
 
-        </LinearLayout>
+                <net.davidcrotty.hercules.view.RepProgressView
+                    android:id="@+id/secondPendingRep"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    custom:state="pending">
+                </net.davidcrotty.hercules.view.RepProgressView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/timer_panel"
