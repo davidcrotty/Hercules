@@ -12,5 +12,9 @@ class ExerciseActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_exercise)
+        val supportActionbar = supportActionBar
+        supportActionbar?.setDisplayHomeAsUpEnabled(true)
+        supportActionbar?.setDefaultDisplayHomeAsUpEnabled(true)
+        supportActionbar?.title = ""
     }
 }
