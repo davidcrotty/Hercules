@@ -6,7 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:custom="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:fillViewport="true">
 
@@ -56,7 +55,6 @@
             android:textSize="16sp"
             android:layout_marginTop="8dp"
             android:textColor="@color/subtitleText"
-            android:text="4 sets of 10 reps"
             app:layout_constraintTop_toBottomOf="@+id/exercise_title"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent"
@@ -74,46 +72,10 @@
             tools:layout_editor_absoluteX="92dp">
 
             <LinearLayout
-                android:id="@+id/set_host"
+                android:id="@+id/rep_host"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
-                <net.davidcrotty.hercules.view.RepProgressView
-                    android:id="@+id/doneRep"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    custom:state="done">
-                </net.davidcrotty.hercules.view.RepProgressView>
-
-                <net.davidcrotty.hercules.view.RepProgressView
-                    android:id="@+id/inProgressRep"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    custom:state="inprogress">
-                </net.davidcrotty.hercules.view.RepProgressView>
-
-                <net.davidcrotty.hercules.view.RepProgressView
-                    android:id="@+id/firstPendingRep"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    custom:state="pending">
-                </net.davidcrotty.hercules.view.RepProgressView>
-
-                <net.davidcrotty.hercules.view.RepProgressView
-                    android:id="@+id/secondPendingRep"
-                    android:layout_width="52dp"
-                    android:layout_height="52dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginEnd="8dp"
-                    custom:state="pending">
-                </net.davidcrotty.hercules.view.RepProgressView>
 
             </LinearLayout>
 

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Hercules</string>
+    <string name="plan_subtitle">%1$d sets of %2$d reps</string>
 </resources>

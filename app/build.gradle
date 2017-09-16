@@ -39,5 +39,6 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile "com.android.support:design:26.1.0"
+    compile "joda-time:joda-time:2.9.9"
 
 }
