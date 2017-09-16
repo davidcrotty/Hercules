@@ -22,5 +22,10 @@ class ExerciseActivity : AppCompatActivity() {
         progress_countdown.progress = 4
 
         inProgressRep.progress = 3
+
+        doneRep.updatePositionTo(1)
+        inProgressRep.updatePositionTo(2)
+        firstPendingRep.updatePositionTo(3)
+        secondPendingRep.updatePositionTo(4)
     }
 }

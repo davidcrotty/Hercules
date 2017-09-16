@@ -7,6 +7,7 @@ import android.widget.FrameLayout
 import net.davidcrotty.hercules.R
 import android.view.View
 import kotlinx.android.synthetic.main.rep_progress.view.*
+import java.text.FieldPosition
 
 
 /**
@@ -17,6 +18,7 @@ import kotlinx.android.synthetic.main.rep_progress.view.*
 class RepProgressView : FrameLayout {
 
     private var state: Int? = null
+    private var position: Int = 0
     var progress: Int = 0
         set(value) {
             field = value
@@ -37,6 +39,7 @@ class RepProgressView : FrameLayout {
                 0, 0)
 
         var state: Int? = null
+        var position: Int? = null
 
         try {
             state = typedArray.getInteger(R.styleable.RepProgress_state, 0)
@@ -47,6 +50,11 @@ class RepProgressView : FrameLayout {
         state?.let {
             updateStateTo(it)
         }
+    }
+
+    fun updatePositionTo(position: Int) {
+        this.position = position
+        order_text.text = position.toString()
     }
 
     fun updateStateTo(state: Int) {
