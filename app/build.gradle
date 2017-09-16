@@ -10,6 +10,9 @@ def getGitRevisionNumber() {
 android {
     compileSdkVersion project.compileSdkVersion
     buildToolsVersion project.buildToolsVersion
+    lintOptions {
+        disable 'GoogleAppIndexingWarning' //we do not have a website to index/deep link this app against, out of scope.
+    }
     defaultConfig {
         applicationId "net.davidcrotty.hercules"
         minSdkVersion project.minSdkVersion

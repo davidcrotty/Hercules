@@ -5,6 +5,7 @@
         adapt both to be the window background for this activity -->
         <item name="colorPrimary">@color/windowBackgroundExercise</item>
         <item name="colorPrimaryDark">@color/windowBackgroundExercise</item>
+        <item name="android:windowBackground">@color/windowBackgroundExercise</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
