@@ -70,24 +70,11 @@
             android:layout_height="52dp"
             android:layout_marginTop="16dp"
             android:background="@android:color/holo_green_dark"
-            app:layout_constraintTop_toBottomOf="@id/subtitle"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent">
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/next_up_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif"
-            android:textSize="16sp"
-            android:textColor="@color/subtitleText"
-            android:text="Next: 30s Rest"
-            android:layout_marginBottom="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/subtitle"
             app:layout_constraintEnd_toStartOf="parent"
             app:layout_constraintStart_toEndOf="parent"
-            tools:layout_editor_absoluteX="141dp" />
+            tools:layout_editor_absoluteX="92dp">
+        </LinearLayout>
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/timer_panel"
@@ -97,7 +84,7 @@
             app:layout_constraintTop_toBottomOf="@+id/plan_track_list"
             app:layout_constraintEnd_toStartOf="@id/end"
             app:layout_constraintStart_toEndOf="@id/start"
-            tools:layout_editor_absoluteX="77dp">
+            tools:layout_editor_absoluteX="67dp">
 
 
             <android.support.constraint.Guideline
@@ -105,8 +92,8 @@
                 android:orientation="horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintGuide_percent="0.43"
-                tools:layout_editor_absoluteY="156dp"
+                app:layout_constraintGuide_percent="0.4"
+                tools:layout_editor_absoluteY="107dp"
                 tools:layout_editor_absoluteX="0dp" />
 
             <ProgressBar
@@ -117,7 +104,8 @@
                 android:progressDrawable="@drawable/countdown_view_shape"
                 app:layout_constraintTop_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintStart_toEndOf="parent"/>
+                app:layout_constraintStart_toEndOf="parent"
+                tools:layout_editor_absoluteX="8dp" />
 
             <android.support.constraint.Guideline
                 android:id="@+id/progress_guide"
@@ -125,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintGuide_percent="0.78"
-                tools:layout_editor_absoluteY="284dp"
+                tools:layout_editor_absoluteY="195dp"
                 tools:layout_editor_absoluteX="0dp" />
 
             <ImageView
@@ -135,7 +123,7 @@
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/icon_guide"
                 android:src="@drawable/lift_icon"
-                tools:layout_editor_absoluteX="81dp" />
+                tools:layout_editor_absoluteX="91dp" />
 
             <TextView
                 android:id="@+id/remaining_reps"
@@ -148,7 +136,7 @@
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/icon_guide"
-                tools:layout_editor_absoluteX="89dp" />
+                tools:layout_editor_absoluteX="99dp" />
 
         </android.support.constraint.ConstraintLayout>
 
@@ -165,13 +153,41 @@
             app:layout_constraintStart_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/timer_panel" />
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/play_pause_toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/play_icon"
+            app:layout_constraintTop_toBottomOf="@+id/time_remaining_text"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            tools:layout_editor_absoluteX="172dp" />
+
         <!-- Guarantees we have enough space to work with, without making compromises to the original design -->
         <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/guideline"
-            app:layout_constraintGuide_begin="1000dp"
-            android:orientation="horizontal" />
+            app:layout_constraintGuide_begin="640dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="1081dp"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/next_up_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/subtitleText"
+            android:text="Next: 30s Rest"
+            app:layout_constraintTop_toBottomOf="@id/play_pause_toggle"
+            app:layout_constraintEnd_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="parent"
+            tools:layout_editor_absoluteX="141dp" />
 
     </android.support.constraint.ConstraintLayout>
 
