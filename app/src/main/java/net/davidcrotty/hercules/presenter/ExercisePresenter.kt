@@ -4,8 +4,9 @@ import android.content.res.Resources
 import net.davidcrotty.hercules.R
 import net.davidcrotty.hercules.model.Set
 import net.davidcrotty.hercules.view.ExerciseView
-import org.joda.time.format.DateTimeFormat
-import org.joda.time.format.DateTimeFormatter
+import org.joda.time.Period
+import org.joda.time.format.PeriodFormatter
+import org.joda.time.format.PeriodFormatterBuilder
 
 /**
  * Created by David Crotty on 16/09/2017.
@@ -14,7 +15,19 @@ import org.joda.time.format.DateTimeFormatter
  */
 class ExercisePresenter(private val view: ExerciseView) {
 
-    private val timeFormat: DateTimeFormatter by lazy { DateTimeFormat.forPattern("mm:ss")}
+    private val MS_SCALAR = 1000L
+    private val timeFormat: PeriodFormatter by lazy {
+            PeriodFormatterBuilder()
+                    .printZeroAlways()
+                    .minimumPrintedDigits(2)
+                    .maximumParsedDigits(2)
+                    .appendMinutes()
+                    .appendSeparator(":")
+                    .printZeroAlways()
+                    .minimumPrintedDigits(2)
+                    .maximumParsedDigits(2)
+                    .appendSeconds()
+                    .toFormatter() }
 
     fun showSetsFrom(setList: ArrayList<Set>) {
         if(setList.isEmpty()) return
@@ -32,6 +45,7 @@ class ExercisePresenter(private val view: ExerciseView) {
     }
 
     private fun timeFrom(seconds: Int) : String {
-        return timeFormat.print(seconds.toLong())
+        val period = Period(seconds.toLong() * MS_SCALAR)
+        return timeFormat.print(period)
     }
 }
