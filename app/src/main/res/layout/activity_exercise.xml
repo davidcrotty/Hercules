@@ -52,14 +52,14 @@
         tools:layout_editor_absoluteX="134dp" />
 
     <TextView
-        android:id="@+id/time_remaining_text"
+        android:id="@+id/next_up_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-light"
-        android:textSize="34sp"
-        android:textColor="@color/titleText"
-        android:text="00:19"
-        android:layout_marginBottom="48dp"
+        android:fontFamily="sans-serif"
+        android:textSize="16sp"
+        android:textColor="@color/subtitleText"
+        android:text="Next: 30s Rest"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toEndOf="parent"/>
@@ -67,7 +67,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/time_remaining_text"
+        app:layout_constraintBottom_toTopOf="@+id/next_up_text"
         app:layout_constraintTop_toBottomOf="@+id/subtitle"
         app:layout_constraintEnd_toStartOf="@id/end"
         app:layout_constraintStart_toEndOf="@id/start">
