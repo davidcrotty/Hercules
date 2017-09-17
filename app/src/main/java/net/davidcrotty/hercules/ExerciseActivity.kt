@@ -124,6 +124,7 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
 
     override fun onPause() {
         super.onPause()
+        isCounting = false
         countDownHandler.removeCallbacksAndMessages(null)
     }
 
