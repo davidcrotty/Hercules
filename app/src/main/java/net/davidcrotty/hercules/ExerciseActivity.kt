@@ -26,6 +26,7 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
 
     private var currentMax: Int = 0
     private var currentProgress: Int = 0
+
     private var isCounting: Boolean = false
     private lateinit var presenter: ExercisePresenter
     private lateinit var countDownHandler: Handler
@@ -104,12 +105,14 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         }
         play_pause_toggle.setOnClickListener {
             if(isCounting) {
-                play_pause_toggle.setImageResource(R.drawable.play_icon)
+                switchToPlayDrawable()
                 countDownHandler.removeCallbacksAndMessages(null) //clears timer
             } else {
                 play_pause_toggle.setImageResource(R.drawable.pause_icon)
                 val index = presenter.currentTrackIndex ?: return@setOnClickListener
+                val setItem = presenter.currentSetList?.get(index) ?: return@setOnClickListener
                 getRepView(index)?.updateStateTo(SetState.IN_PROGRESS)
+                updateTimerComponents(setItem.timeSeconds, setItem.repitions, index)
                 startTimer()
             }
             isCounting = !isCounting
@@ -127,7 +130,7 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         switchToPlayDrawable()
     }
 
-    override fun updateTimerComponents(max: Int, setIndex: Int) {
+    override fun updateTimerComponents(max: Int, maxReps: Int, setIndex: Int) {
         progress_countdown.max = max
         progress_countdown.progress = currentProgress
         val view = getRepView(setIndex)
@@ -135,6 +138,9 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         view?.progress = currentProgress
         currentMax = max
         updateTimeRemaining(presenter.timeFrom(currentMax - currentProgress))
+        val repPercentage = currentProgress.toFloat() / currentMax.toFloat()
+        val remainingReps = maxReps * repPercentage
+        remaining_reps.text = maxReps.minus(remainingReps.toInt()).toString()
     }
 
     override fun update() {
@@ -143,24 +149,29 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
             val viewIndex = presenter.currentTrackIndex
             viewIndex?.let {
                 val set = presenter.currentSetList?.get(it) ?: return@let
-                updateTimerComponents(set.timeSeconds, viewIndex)
+                updateTimerComponents(set.timeSeconds, set.repitions, viewIndex)
                 startTimer()
             }
         }, 1000)
     }
 
     private fun switchToPlayDrawable() {
-
+        play_pause_toggle.setImageResource(R.drawable.play_icon)
     }
 
     private fun startTimer() {
         countDownHandler.postDelayed({
-            currentProgress++
-            val viewIndex = presenter.currentTrackIndex
-            viewIndex?.let {
-                val set = presenter.currentSetList?.get(it) ?: return@let
-                updateTimerComponents(set.timeSeconds, viewIndex)
-                startTimer()
+            if(currentProgress >= currentMax) {
+                countDownHandler.removeCallbacksAndMessages(null)
+                presenter.nextSet(skippable = this, resources = resources)
+            } else {
+                currentProgress++
+                val viewIndex = presenter.currentTrackIndex
+                viewIndex?.let {
+                    val set = presenter.currentSetList?.get(it) ?: return@let
+                    updateTimerComponents(set.timeSeconds, set.repitions, viewIndex)
+                    startTimer()
+                }
             }
         }, 1000)
     }
