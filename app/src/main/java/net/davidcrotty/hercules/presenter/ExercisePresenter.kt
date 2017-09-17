@@ -82,6 +82,7 @@ class ExercisePresenter(private val view: ExerciseView) {
             view.updateTitle(it[index].title)
             updateNextUp(resources, index)
             view.updateReps(set.repitions)
+            view.updateTimeRemaining(timeFrom(set.timeSeconds))
         }
     }
 

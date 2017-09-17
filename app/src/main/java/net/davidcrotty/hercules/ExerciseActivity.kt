@@ -65,8 +65,7 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable {
         progress_countdown.max = 10
         progress_countdown.progress = 0
         updateReps(repetitions)
-        time_remaining_text.text = timeFormatted
-
+        updateTimeRemaining(timeFormatted)
     }
 
     override fun updateNextUp(text: String) {
@@ -93,6 +92,10 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable {
 
     override fun updateReps(reps: Int) {
         remaining_reps.text = reps.toString()
+    }
+
+    override fun updateTimeRemaining(text: String) {
+        time_remaining_text.text = text
     }
 
     private fun bindListeners() {
