@@ -13,7 +13,7 @@ import net.davidcrotty.hercules.view.PlanFragment
 class PlanAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
 
     override fun getItem(position: Int): Fragment {
-        return PlanFragment()
+        return PlanFragment.newInstance(position)
     }
 
     override fun getCount(): Int {
