@@ -6,7 +6,7 @@ buildscript {
     ext.buildToolsVersion="26.0.1"
     ext.minSdkVersion=21
     ext.targetSdkVersion=25
-    ext.appcompatVersion="26.0.2"
+    ext.appcompatVersion="26.1.0"
     ext.releaseVersion="0.1.0"
 
     repositories {
