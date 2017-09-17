@@ -15,5 +15,5 @@ interface ExerciseView {
     fun updateNextUp(text: String)
     fun updateReps(reps: Int)
     fun updateTimeRemaining(text: String)
-    fun updateTimerComponents(max: Int, repsRemaining: Int, setIndex: Int)
+    fun updateTimerComponents(max: Int, maxReps: Int, setIndex: Int)
 }
