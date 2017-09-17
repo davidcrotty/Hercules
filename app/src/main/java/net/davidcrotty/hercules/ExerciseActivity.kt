@@ -26,7 +26,6 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
 
     private var currentMax: Int = 0
     private var currentProgress: Int = 0
-
     private var isCounting: Boolean = false
     private lateinit var presenter: ExercisePresenter
     private lateinit var countDownHandler: Handler
@@ -84,6 +83,7 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
 
     override fun next(viewIndex: Int) {
         getRepView(viewIndex)?.updateStateTo(SetState.DONE)
+        getRepView(viewIndex + 1)?.updateStateTo(SetState.IN_PROGRESS)
     }
 
     override fun previous(viewIndex: Int) {
@@ -175,6 +175,8 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
                 currentProgress++
                 val viewIndex = presenter.currentTrackIndex
                 viewIndex?.let {
+                    val size = presenter.currentSetList?.size ?: return@let
+                    if(it >= size) return@let
                     val set = presenter.currentSetList?.get(it) ?: return@let
                     updateSetFrom(set, viewIndex)
                 }
