@@ -53,14 +53,32 @@ class ExercisePresenter(private val view: ExerciseView) {
 
     fun nextSet(skippable: Skippable, resources: Resources) {
         var index = currentTrackIndex ?: return
+        val setList = currentSetList ?: return
         skippable.next(index)
         index++
+        if(index >= setList.size) {
+            index = setList.size
+        }
+        traverseSetUsing(index, resources)
+    }
+
+    fun previousSet(skippable: Skippable, resources: Resources) {
+        var index = currentTrackIndex ?: return
+        index--
+        if(index < 0) {
+            index = 0
+        }
+        skippable.previous(index)
+        traverseSetUsing(index, resources)
+    }
+
+    private fun traverseSetUsing(index: Int, resources: Resources) {
         currentTrackIndex = index
 
         currentSetList?.let {
-            if(index >= it.size) return@let
-            val nextSet = it[index]
-            resetUiUsing(nextSet)
+            if(index >= it.size || index < 0) return@let
+            val set = it[index]
+            resetUiUsing(set)
             view.updateTitle(it[index].title)
             updateNextUp(resources, index)
         }

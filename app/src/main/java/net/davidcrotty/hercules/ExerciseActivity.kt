@@ -83,12 +83,20 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable {
     }
 
     override fun previous(viewIndex: Int) {
-
+        val childCount = rep_host.childCount
+        if(viewIndex >= childCount || viewIndex < 0) return
+        val view = rep_host.getChildAt(viewIndex)
+        if(view is RepProgressView) {
+            view.updateStateTo(SetState.PENDING)
+        }
     }
 
     private fun bindListeners() {
         next_set.setOnClickListener {
             presenter.nextSet(skippable = this, resources = resources)
+        }
+        previous_set.setOnClickListener {
+            presenter.previousSet(skippable = this, resources = resources)
         }
     }
 }

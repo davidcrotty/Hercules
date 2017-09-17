@@ -74,6 +74,7 @@ class RepProgressView : FrameLayout {
                 pending_task.visibility = View.VISIBLE
                 order_text.visibility = View.VISIBLE
                 progress_task.visibility = View.GONE
+                done_icon.visibility = View.GONE
             }
         }
     }

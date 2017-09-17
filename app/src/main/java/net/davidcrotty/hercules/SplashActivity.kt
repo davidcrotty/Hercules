@@ -22,9 +22,9 @@ class SplashActivity : AppCompatActivity() {
 
     private fun generateSet() : ArrayList<Set> {
         val first = Set("Biceps curl", 10, 30, SetState.PENDING)
-        val second = Set("Biceps curl", 10, 30, SetState.PENDING)
-        val third = Set("Biceps curl", 10, 30, SetState.PENDING)
-        val fourth = Set("Biceps curl", 10, 30, SetState.PENDING)
+        val second = Set("Shoulder press", 10, 30, SetState.PENDING)
+        val third = Set("Dead lifts", 10, 30, SetState.PENDING)
+        val fourth = Set("Press ups", 10, 30, SetState.PENDING)
 
         return ArrayList<Set>().apply {
             add(first)
