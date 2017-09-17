@@ -16,6 +16,7 @@
         </activity>
 
         <activity android:name=".ExerciseActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
             android:theme="@style/AppTheme">
         </activity>
     </application>

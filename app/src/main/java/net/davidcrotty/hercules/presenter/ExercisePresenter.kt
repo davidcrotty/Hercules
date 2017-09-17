@@ -16,8 +16,8 @@ import org.joda.time.format.PeriodFormatterBuilder
  */
 class ExercisePresenter(private val view: ExerciseView) {
 
-    private var currentTrackIndex: Int? = null
-    private var currentSetList: ArrayList<Set>? = null
+    var currentTrackIndex: Int? = null
+    var currentSetList: ArrayList<Set>? = null
     private val MS_SCALAR = 1000L
     private val timeFormat: PeriodFormatter by lazy {
             PeriodFormatterBuilder()
@@ -41,6 +41,7 @@ class ExercisePresenter(private val view: ExerciseView) {
         currentTrackIndex = 0
         val first = setList.first()
         resetUiUsing(first)
+        view.updateTimerComponents(first.timeSeconds, 0)
     }
 
     fun showTitlesFrom(resources: Resources, setList: ArrayList<Set>) {
@@ -83,6 +84,7 @@ class ExercisePresenter(private val view: ExerciseView) {
             updateNextUp(resources, index)
             view.updateReps(set.repitions)
             view.updateTimeRemaining(timeFrom(set.timeSeconds))
+            view.updateTimerComponents(set.timeSeconds, 0)
         }
     }
 

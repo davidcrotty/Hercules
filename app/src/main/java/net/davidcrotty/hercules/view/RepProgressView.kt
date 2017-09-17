@@ -25,6 +25,10 @@ class RepProgressView : FrameLayout {
             progress_task.progress = value
         }
     var max: Int = 10
+        set(value) {
+            field = value
+            progress_task.max = value
+        }
 
     constructor(context: Context) : super(context) {
         init(context)
@@ -39,7 +43,6 @@ class RepProgressView : FrameLayout {
                 0, 0)
 
         var state: Int? = null
-        var position: Int? = null
 
         try {
             state = typedArray.getInteger(R.styleable.RepProgress_state, 0)

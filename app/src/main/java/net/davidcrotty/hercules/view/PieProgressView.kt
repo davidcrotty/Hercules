@@ -29,7 +29,7 @@ class PieProgressView : FrameLayout {
             currentCircleDraw = percentage * 360f
             invalidate()
         }
-    var max: Int = 10
+    var max: Int = 0
         set(value)  {
             field = value
             invalidate()
@@ -59,6 +59,7 @@ class PieProgressView : FrameLayout {
 
     override fun dispatchDraw(canvas: Canvas?) {
         super.dispatchDraw(canvas)
+        if(max <= 0) return
         shape?.let {
             canvas?.drawArc(it, 270f, currentCircleDraw, true, paint)
         }
