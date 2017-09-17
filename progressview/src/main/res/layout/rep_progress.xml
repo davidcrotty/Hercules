@@ -23,12 +23,12 @@
         android:visibility="gone"
         app:srcCompat="@drawable/set_done"/>
 
-    <net.davidcrotty.hercules.view.PieProgressView
+    <net.davidcrotty.progressview.PieProgressView
         android:id="@+id/progress_task"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    </net.davidcrotty.hercules.view.PieProgressView>
+    </net.davidcrotty.progressview.PieProgressView>
 
     <TextView
         android:id="@+id/order_text"

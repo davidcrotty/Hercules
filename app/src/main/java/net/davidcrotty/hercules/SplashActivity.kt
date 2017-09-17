@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import net.davidcrotty.hercules.model.Set
-import net.davidcrotty.hercules.view.SetState
+import net.davidcrotty.progressview.SetState
 
 /**
  * Created by David Crotty on 16/09/2017.

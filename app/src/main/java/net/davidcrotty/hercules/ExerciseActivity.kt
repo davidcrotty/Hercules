@@ -9,9 +9,9 @@ import net.davidcrotty.hercules.model.Set
 import net.davidcrotty.hercules.presenter.ExercisePresenter
 import net.davidcrotty.hercules.presenter.Updatable
 import net.davidcrotty.hercules.view.ExerciseView
-import net.davidcrotty.hercules.view.RepProgressView
-import net.davidcrotty.hercules.view.SetState
+import net.davidcrotty.progressview.RepProgressView
 import net.davidcrotty.hercules.view.Skippable
+import net.davidcrotty.progressview.SetState
 
 /**
  * Created by David Crotty on 15/09/2017.

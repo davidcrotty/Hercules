@@ -5,8 +5,6 @@
     <color name="windowBackgroundExercise">#1A2023</color>
     <color name="titleText">#E5E7E7</color>
     <color name="subtitleText">#B8BCBE</color>
-    <color name="progressBackground">#8A9D8D</color>
-    <color name="lightGreen">#7DFC0A</color>
     <!-- WCAG 2.0 Guidelines for icons/text and background colour deviates purposefully, see README.MD for details -->
     <color name="windowBackgroundSplash">#7FD219</color>
 </resources>

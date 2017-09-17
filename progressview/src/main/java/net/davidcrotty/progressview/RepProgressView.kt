@@ -1,14 +1,11 @@
-package net.davidcrotty.hercules.view
+package net.davidcrotty.progressview
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import net.davidcrotty.hercules.R
 import android.view.View
 import kotlinx.android.synthetic.main.rep_progress.view.*
-import java.text.FieldPosition
-
 
 /**
  * Created by David Crotty on 16/09/2017.

@@ -1,15 +1,13 @@
-package net.davidcrotty.hercules.view
+package net.davidcrotty.progressview
 
 import android.content.Context
 import android.graphics.Canvas
-import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.RectF
 import android.support.v4.content.ContextCompat
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.FrameLayout
-import net.davidcrotty.hercules.R
 
 /**
  * Created by David Crotty on 16/09/2017.
@@ -46,7 +44,7 @@ class PieProgressView : FrameLayout {
     private fun init(context: Context) {
         LayoutInflater.from(context).inflate(R.layout.rep_count_down, this)
         paint = Paint()
-        paint.color = ContextCompat.getColor(context, R.color.lightGreen)
+        paint.color = ContextCompat.getColor(context, R.color.light_green)
         paint.style = Paint.Style.FILL_AND_STROKE
     }
 

@@ -2,7 +2,7 @@ package net.davidcrotty.hercules.model
 
 import android.os.Parcel
 import android.os.Parcelable
-import net.davidcrotty.hercules.view.SetState
+import net.davidcrotty.progressview.SetState
 
 /**
  * Created by David Crotty on 16/09/2017.

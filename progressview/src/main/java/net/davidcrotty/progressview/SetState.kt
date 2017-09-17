@@ -1,4 +1,4 @@
-package net.davidcrotty.hercules.view
+package net.davidcrotty.progressview
 
 /**
  * Created by David Crotty on 16/09/2017.
