@@ -3,4 +3,7 @@
     <string name="plan_subtitle">%1$d sets of %2$d reps</string>
     <string name="plan_next">Next: %1$d %2$s</string>
     <string name="plan_done">Next: Done!</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>
