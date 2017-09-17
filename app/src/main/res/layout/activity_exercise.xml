@@ -171,22 +171,24 @@
             app:layout_constraintStart_toEndOf="parent"
             tools:layout_editor_absoluteX="172dp" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/previous_set"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="previous set"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/play_pause_toggle"
             android:layout_marginStart="24dp"
             android:src="@drawable/previous"/>
 
-        <ImageView
+        <ImageButton
             android:id="@+id/next_set"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:layout_marginTop="9dp"
+            android:layout_marginTop="8dp"
             android:contentDescription="next set"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/play_pause_toggle"
