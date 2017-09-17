@@ -97,7 +97,7 @@ class ExercisePresenter(private val view: ExerciseView) {
         }
     }
 
-    private fun timeFrom(seconds: Int) : String {
+    fun timeFrom(seconds: Int) : String {
         val period = Period(seconds.toLong() * MS_SCALAR)
         return timeFormat.print(period)
     }

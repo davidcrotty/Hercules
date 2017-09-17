@@ -104,8 +104,10 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         }
         play_pause_toggle.setOnClickListener {
             if(isCounting) {
+                play_pause_toggle.setImageResource(R.drawable.play_icon)
                 countDownHandler.removeCallbacksAndMessages(null) //clears timer
             } else {
+                play_pause_toggle.setImageResource(R.drawable.pause_icon)
                 val index = presenter.currentTrackIndex ?: return@setOnClickListener
                 getRepView(index)?.updateStateTo(SetState.IN_PROGRESS)
                 startTimer()
@@ -132,6 +134,7 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         view?.max = max
         view?.progress = currentProgress
         currentMax = max
+        updateTimeRemaining(presenter.timeFrom(currentMax - currentProgress))
     }
 
     override fun update() {
