@@ -5,6 +5,10 @@
     <color name="window_background_exercise">#1A2023</color>
     <color name="title_text">#E5E7E7</color>
     <color name="subtitle_text">#B8BCBE</color>
+    <color name="window_background_splash">#7FD219</color>
+
     <!-- WCAG 2.0 Guidelines for icons/text and background colour deviates purposefully, see README.MD for details -->
-    <color name="windowBackgroundSplash">#7FD219</color>
+    <color name="colour_accent_dashboard">#68a512</color>
+    <color name="colour_primary_dashboard">#111c21</color>
+    <color name="colour_primary_dark_dashboard">#111c21</color>
 </resources>
