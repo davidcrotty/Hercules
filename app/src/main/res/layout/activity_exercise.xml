@@ -138,7 +138,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-light"
                 android:textColor="@color/titleText"
-                android:text="3"
                 android:textSize="96sp"
                 app:layout_constraintEnd_toStartOf="parent"
                 app:layout_constraintStart_toEndOf="parent"

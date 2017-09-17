@@ -13,4 +13,5 @@ interface ExerciseView {
     fun addSet(set: Set, index: Int)
     fun resetMainProgress(repetitions: Int, timeFormatted: String)
     fun updateNextUp(text: String)
+    fun updateReps(reps: Int)
 }

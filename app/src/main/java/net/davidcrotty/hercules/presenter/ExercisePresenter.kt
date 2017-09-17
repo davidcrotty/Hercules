@@ -81,6 +81,7 @@ class ExercisePresenter(private val view: ExerciseView) {
             resetUiUsing(set)
             view.updateTitle(it[index].title)
             updateNextUp(resources, index)
+            view.updateReps(set.repitions)
         }
     }
 
