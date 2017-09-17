@@ -86,7 +86,7 @@ class ExercisePresenter(private val view: ExerciseView) {
             updateNextUp(resources, index)
             view.updateReps(set.repitions)
             view.updateTimeRemaining(timeFrom(set.timeSeconds))
-            view.updateTimerComponents(set.timeSeconds, set.repitions, 0)
+            view.updateTimerComponents(set.timeSeconds, set.repitions, index)
         }
     }
 

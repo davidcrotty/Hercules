@@ -164,16 +164,27 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
             if(currentProgress >= currentMax) {
                 countDownHandler.removeCallbacksAndMessages(null)
                 presenter.nextSet(skippable = this, resources = resources)
+                val viewIndex = presenter.currentTrackIndex
+                viewIndex?.let {
+                    val set = presenter.currentSetList?.get(it) ?: return@let
+                    currentProgress = 0
+                    currentMax = set.timeSeconds
+                    updateSetFrom(set, viewIndex)
+                }
             } else {
                 currentProgress++
                 val viewIndex = presenter.currentTrackIndex
                 viewIndex?.let {
                     val set = presenter.currentSetList?.get(it) ?: return@let
-                    updateTimerComponents(set.timeSeconds, set.repitions, viewIndex)
-                    startTimer()
+                    updateSetFrom(set, viewIndex)
                 }
             }
         }, 1000)
+    }
+
+    private fun updateSetFrom(set: Set, viewIndex: Int) {
+        updateTimerComponents(set.timeSeconds, set.repitions, viewIndex)
+        startTimer()
     }
 
     private fun getRepView(viewIndex: Int) : RepProgressView? {
