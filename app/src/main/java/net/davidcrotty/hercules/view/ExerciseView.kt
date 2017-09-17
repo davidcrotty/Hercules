@@ -11,7 +11,7 @@ interface ExerciseView {
     fun updateTitle(text: String)
     fun updateSubtitle(text: String)
     fun addSet(set: Set, index: Int)
-    fun resetMainProgress(repetitions: Int, timeFormatted: String)
+    fun resetMainProgress(repetitions: Int, timeFormatted: String, seconds: Int)
     fun updateNextUp(text: String)
     fun updateReps(reps: Int)
     fun updateTimeRemaining(text: String)

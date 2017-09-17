@@ -69,9 +69,11 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         exercise_title.text = text
     }
 
-    override fun resetMainProgress(repetitions: Int, timeFormatted: String) {
-        progress_countdown.max = 10
-        progress_countdown.progress = 0
+    override fun resetMainProgress(repetitions: Int, timeFormatted: String, seconds: Int) {
+        currentProgress = 0
+        currentMax = seconds
+        progress_countdown.max = currentProgress
+        progress_countdown.progress = currentMax
         updateReps(repetitions)
         updateTimeRemaining(timeFormatted)
     }
@@ -167,8 +169,6 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
                 val viewIndex = presenter.currentTrackIndex
                 viewIndex?.let {
                     val set = presenter.currentSetList?.get(it) ?: return@let
-                    currentProgress = 0
-                    currentMax = set.timeSeconds
                     updateSetFrom(set, viewIndex)
                 }
             } else {

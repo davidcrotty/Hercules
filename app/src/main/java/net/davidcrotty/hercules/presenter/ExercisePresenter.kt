@@ -106,8 +106,7 @@ class ExercisePresenter(private val view: ExerciseView) {
 
     private fun resetUiUsing(nextSet: Set) {
         val time = timeFrom(nextSet.timeSeconds)
-        view.resetMainProgress(nextSet.repitions, time)
-
+        view.resetMainProgress(nextSet.repitions, time, nextSet.timeSeconds)
     }
 }
 
