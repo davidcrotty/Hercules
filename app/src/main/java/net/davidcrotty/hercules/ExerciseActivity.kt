@@ -87,7 +87,8 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
     }
 
     override fun previous(viewIndex: Int) {
-        getRepView(viewIndex)?.updateStateTo(SetState.PENDING)
+        getRepView(viewIndex)?.updateStateTo(SetState.IN_PROGRESS)
+        getRepView(viewIndex + 1)?.updateStateTo(SetState.PENDING)
     }
 
     override fun updateReps(reps: Int) {
