@@ -8,7 +8,9 @@ import net.davidcrotty.hercules.model.Set
  * Copyright © 2017 David Crotty - All Rights Reserved
  */
 interface ExerciseView {
+    fun updateTitle(text: String)
     fun updateSubtitle(text: String)
     fun addSet(set: Set, index: Int)
     fun resetMainProgress(repetitions: Int, timeFormatted: String)
+    fun updateNextUp(text: String)
 }

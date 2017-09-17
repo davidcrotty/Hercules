@@ -8,13 +8,15 @@ import net.davidcrotty.hercules.model.Set
 import net.davidcrotty.hercules.presenter.ExercisePresenter
 import net.davidcrotty.hercules.view.ExerciseView
 import net.davidcrotty.hercules.view.RepProgressView
+import net.davidcrotty.hercules.view.SetState
+import net.davidcrotty.hercules.view.Skippable
 
 /**
  * Created by David Crotty on 15/09/2017.
  *
  * Copyright © 2017 David Crotty - All Rights Reserved
  */
-class ExerciseActivity : AppCompatActivity(), ExerciseView {
+class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable {
 
     companion object {
         val SET_KEY = "SET_KEY"
@@ -34,12 +36,10 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView {
 
         if(intent.hasExtra(SET_KEY)) {
             val setList = intent.getParcelableArrayListExtra<Set>(SET_KEY)
-            presenter.showSubtitleFrom(resources, setList)
-            presenter.showSetsFrom(setList)
-            //update sets, use state enum <- create
-            //create recycler view
-            //update list
+            presenter.initializeSetsFrom(setList)
+            presenter.showTitlesFrom(resources, setList)
         }
+        bindListeners()
     }
 
     override fun updateSubtitle(text: String) {
@@ -57,10 +57,38 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView {
         rep_host.addView(repProgressView, params)
     }
 
+    override fun updateTitle(text: String) {
+        exercise_title.text = text
+    }
+
     override fun resetMainProgress(repetitions: Int, timeFormatted: String) {
         progress_countdown.max = 10
         progress_countdown.progress = 0
         remaining_reps.text = repetitions.toString()
         time_remaining_text.text = timeFormatted
+
+    }
+
+    override fun updateNextUp(text: String) {
+        next_up_text.text = text
+    }
+
+    override fun next(viewIndex: Int) {
+        val childCount = rep_host.childCount
+        if(viewIndex > childCount) return
+        val view = rep_host.getChildAt(viewIndex)
+        if(view is RepProgressView) {
+            view.updateStateTo(SetState.DONE)
+        }
+    }
+
+    override fun previous(viewIndex: Int) {
+
+    }
+
+    private fun bindListeners() {
+        next_set.setOnClickListener {
+            presenter.nextSet(skippable = this, resources = resources)
+        }
     }
 }
