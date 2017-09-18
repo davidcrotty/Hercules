@@ -16,4 +16,5 @@
     <string name="edit_upload">EDIT</string>
     <string name="new_exercise">NEW EXERCISE</string>
     <string name="done">DONE</string>
+    <string name="plan_name">Plan name</string>
 </resources>

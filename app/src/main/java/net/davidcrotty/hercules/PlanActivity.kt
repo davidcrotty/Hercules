@@ -33,6 +33,7 @@ class PlanActivity : AppCompatActivity() {
                     override fun onGlobalLayout() {
                         revealActivity(intent.getIntExtra(DashboardActivity.REVEAL_X, 0),
                                 intent.getIntExtra(DashboardActivity.REVEAL_Y, 0))
+                        root.viewTreeObserver.removeOnGlobalLayoutListener(this)
                     }
                 }
                 observer.addOnGlobalLayoutListener(listener)
