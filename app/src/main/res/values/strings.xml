@@ -17,4 +17,8 @@
     <string name="new_exercise">NEW EXERCISE</string>
     <string name="done">DONE</string>
     <string name="plan_name">Plan name</string>
+    <string name="mock_name">Bicep curls</string>
+    <string name="mock_rep">10 reps</string>
+    <string name="mock_weight">10 kg</string>
+    <string name="mock_time">30s</string>
 </resources>
