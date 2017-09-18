@@ -95,7 +95,7 @@ class ExercisePresenter(private val view: ExerciseView) {
         if(next == null) {
             view.updateNextUp(resources.getString(R.string.plan_done))
         } else {
-            view.updateNextUp(resources.getString(R.string.plan_next, next.timeSeconds, next.title))
+            view.updateNextUp(resources.getString(R.string.plan_next, next.repitions, next.title))
         }
     }
 
