@@ -3,6 +3,7 @@ package net.davidcrotty.hercules
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import android.widget.LinearLayout
 import kotlinx.android.synthetic.main.activity_exercise.*
 import net.davidcrotty.hercules.model.Set
@@ -75,6 +76,14 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
         progress_countdown.progress = currentMax
         updateReps(repetitions)
         updateTimeRemaining(timeFormatted)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.getItemId() === android.R.id.home) {
+            finish()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     override fun updateNextUp(text: String) {

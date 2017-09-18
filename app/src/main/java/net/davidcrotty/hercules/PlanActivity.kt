@@ -2,6 +2,7 @@ package net.davidcrotty.hercules
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewAnimationUtils
 import android.view.ViewTreeObserver
@@ -41,6 +42,14 @@ class PlanActivity : AppCompatActivity() {
         }
 
         bindListeners()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.getItemId() === android.R.id.home) {
+            finish()
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun bindListeners() {
