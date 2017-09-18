@@ -12,4 +12,5 @@
     <color name="colour_primary_dashboard">#111c21</color>
     <color name="colour_primary_dark_dashboard">#111c21</color>
     <color name="card_background">#384247</color>
+    <color name="rep_text">#6c7c84</color>
 </resources>

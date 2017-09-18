@@ -40,7 +40,7 @@ class PlanFragment : Fragment() {
 
         val index = arguments.getInt(DAY_INDEX_KEY, - 1)
         if(index >= 0) {
-            val adapter = PlanCardAdapter(dataSource.planForDay(index))
+            val adapter = PlanCardAdapter(dataSource.planForDay(index), activity)
             plan_list.layoutManager = LinearLayoutManager(activity)
             plan_list.adapter = adapter
         }

@@ -5,4 +5,4 @@ package net.davidcrotty.hercules.model
  *
  * Copyright © 2017 David Crotty - All Rights Reserved
  */
-class Plan(val owner: String, val trainingType: String, setList: ArrayList<PlanSet>)
+class Plan(val owner: String, val trainingType: String, val setList: ArrayList<PlanSet>)

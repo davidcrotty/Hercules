@@ -1,9 +1,11 @@
 package net.davidcrotty.hercules.adapter
 
+import android.content.Context
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
 import net.davidcrotty.hercules.R
 import net.davidcrotty.hercules.model.Plan
@@ -13,7 +15,8 @@ import net.davidcrotty.hercules.model.Plan
  *
  * Copyright © 2017 David Crotty - All Rights Reserved
  */
-class PlanCardAdapter(private val list: ArrayList<Plan>) : RecyclerView.Adapter<PlanCardAdapter.PlanHolder>() {
+class PlanCardAdapter(private val list: ArrayList<Plan>,
+                      private val context: Context) : RecyclerView.Adapter<PlanCardAdapter.PlanHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -24,6 +27,10 @@ class PlanCardAdapter(private val list: ArrayList<Plan>) : RecyclerView.Adapter<
         val plan = list[position]
         holder.personAdded.text = plan.owner
         holder.trainingType.text = plan.trainingType
+        for(set in plan.setList) {
+            val view = LayoutInflater.from(context).inflate(R.layout.rep_view, holder.repList, false)
+            holder.repList.addView(view)
+        }
     }
 
     override fun getItemCount(): Int {
@@ -35,10 +42,12 @@ class PlanCardAdapter(private val list: ArrayList<Plan>) : RecyclerView.Adapter<
 
         val personAdded: TextView
         val trainingType: TextView
+        val repList: LinearLayout
 
         constructor(view: View) : super(view) {
             personAdded = view.findViewById(R.id.person_added)
             trainingType = view.findViewById(R.id.training_type)
+            repList = view.findViewById(R.id.rep_list)
         }
     }
 }
