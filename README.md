@@ -1,6 +1,6 @@
 # Hercules
 
-Create daily regimen so that you can see what you need to do today, and track how much you've done.
+Create your own daily workout regime, set your daily goals and record your progress.
 
 Base app on design from: (https://dribbble.com/shots/3719736-Bigger-biceps)
 ![alt text](https://cdn.dribbble.com/users/140092/screenshots/3719736/iphone_7.png "Original design")
