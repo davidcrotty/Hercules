@@ -113,6 +113,8 @@ class ExerciseActivity : AppCompatActivity(), ExerciseView, Skippable, Updatable
             } else {
                 play_pause_toggle.setImageResource(R.drawable.pause_icon)
                 val index = presenter.currentTrackIndex ?: return@setOnClickListener
+                val size = presenter.currentSetList?.size ?: return@setOnClickListener
+                if(size >= index) return@setOnClickListener
                 val setItem = presenter.currentSetList?.get(index) ?: return@setOnClickListener
                 getRepView(index)?.updateStateTo(SetState.IN_PROGRESS)
                 updateTimerComponents(setItem.timeSeconds, setItem.repitions, index)
