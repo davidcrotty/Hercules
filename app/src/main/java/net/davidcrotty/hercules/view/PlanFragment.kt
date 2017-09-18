@@ -7,12 +7,13 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import net.davidcrotty.hercules.ExerciseActivity
-import net.davidcrotty.hercules.adapter.PlanCardAdapter
-import net.davidcrotty.hercules.domain.DataSource
 import net.davidcrotty.hercules.R
+import net.davidcrotty.hercules.adapter.PlanCardAdapter
+import net.davidcrotty.hercules.adapter.RecyclerListener
+import net.davidcrotty.hercules.domain.DataSource
+import net.davidcrotty.hercules.model.Plan
 import net.davidcrotty.hercules.model.Set
 import net.davidcrotty.progressview.SetState
 
@@ -21,7 +22,7 @@ import net.davidcrotty.progressview.SetState
  *
  * Copyright © 2017 David Crotty - All Rights Reserved
  */
-class PlanFragment : Fragment(), View.OnClickListener {
+class PlanFragment : Fragment(), RecyclerListener {
 
     companion object {
         val DAY_INDEX_KEY = "DAY_INDEX_KEY"
@@ -35,6 +36,9 @@ class PlanFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    private var adapter: PlanCardAdapter? = null
+    private var dataSet: ArrayList<Plan>? = null
+
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater?.inflate(R.layout.fragment_dashboard, container, false)
     }
@@ -45,30 +49,22 @@ class PlanFragment : Fragment(), View.OnClickListener {
 
         val index = arguments.getInt(DAY_INDEX_KEY, - 1)
         if(index >= 0) {
-            val adapter = PlanCardAdapter(dataSource.planForDay(index), activity, this)
+            val dataSet = dataSource.planForDay(index)
+            val adapter = PlanCardAdapter(dataSet, activity, this)
+            this.dataSet = dataSet
+            this.adapter = adapter
             plan_list.layoutManager = LinearLayoutManager(activity)
             plan_list.adapter = adapter
         }
     }
 
-    override fun onClick(p0: View?) {
+    override fun onClick(view: View, position: Int) {
         val intent = Intent(activity, ExerciseActivity::class.java)
-        val setList = generateSet()
-        intent.putParcelableArrayListExtra(ExerciseActivity.SET_KEY, setList)
+        val plan = dataSet?.get(position) ?: return
+        val converted = plan.setList.map {
+            item -> Set(item.name, item.repititions, item.timeSeconds, SetState.PENDING)
+        } as ArrayList<Set>
+        intent.putParcelableArrayListExtra(ExerciseActivity.SET_KEY, converted)
         startActivity(intent)
-    }
-
-    private fun generateSet() : ArrayList<Set> {
-        val first = Set("Biceps curl", 10, 30, SetState.PENDING)
-        val second = Set("Shoulder press", 8, 30, SetState.PENDING)
-        val third = Set("Dead lifts", 7, 30, SetState.PENDING)
-        val fourth = Set("Press ups", 6, 30, SetState.PENDING)
-
-        return ArrayList<Set>().apply {
-            add(first)
-            add(second)
-            add(third)
-            add(fourth)
-        }
     }
 }

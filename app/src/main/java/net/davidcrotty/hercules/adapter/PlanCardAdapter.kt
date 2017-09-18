@@ -17,7 +17,7 @@ import net.davidcrotty.hercules.model.Plan
  */
 class PlanCardAdapter(private val list: ArrayList<Plan>,
                       private val context: Context,
-                      private val listener: View.OnClickListener) : RecyclerView.Adapter<PlanCardAdapter.PlanHolder>() {
+                      private val listener: RecyclerListener) : RecyclerView.Adapter<PlanCardAdapter.PlanHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PlanHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -45,7 +45,7 @@ class PlanCardAdapter(private val list: ArrayList<Plan>,
     }
 
 
-    inner class PlanHolder : RecyclerView.ViewHolder {
+    inner class PlanHolder : RecyclerView.ViewHolder, View.OnClickListener {
 
         val personAdded: TextView
         val trainingType: TextView
@@ -55,7 +55,11 @@ class PlanCardAdapter(private val list: ArrayList<Plan>,
             personAdded = view.findViewById(R.id.person_added)
             trainingType = view.findViewById(R.id.training_type)
             repList = view.findViewById(R.id.rep_list)
-            view.setOnClickListener(listener)
+            view.setOnClickListener(this)
+        }
+
+        override fun onClick(view: View) {
+            listener.onClick(view, adapterPosition)
         }
     }
 }
