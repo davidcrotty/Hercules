@@ -29,7 +29,13 @@ class PlanCardAdapter(private val list: ArrayList<Plan>,
         holder.personAdded.text = plan.owner
         holder.trainingType.text = plan.trainingType
         for(set in plan.setList) {
+            /* Using nested recyclers is generally not recommended by Google.
+               Although this solution is far from optimal, given more time I would ensure views were cached */
             val view = LayoutInflater.from(context).inflate(R.layout.rep_view, holder.repList, false)
+            view.findViewById<TextView>(R.id.name).text = set.name
+            view.findViewById<TextView>(R.id.rep_number).text = context.resources.getString(R.string.reps_format, set.repititions)
+                    view.findViewById<TextView>(R.id.weight).text = context.resources.getString(R.string.weight_format, set.weight)
+            view.findViewById<TextView>(R.id.time).text = context.resources.getString(R.string.time_format, set.timeSeconds)
             holder.repList.addView(view)
         }
     }
