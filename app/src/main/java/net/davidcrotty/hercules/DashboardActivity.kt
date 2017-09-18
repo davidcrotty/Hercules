@@ -55,5 +55,8 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, D
             pager.currentItem = pager.currentItem + 1
         })
         pager.addOnPageChangeListener(this)
+        add_exercise.setOnClickListener({
+
+        })
     }
 }

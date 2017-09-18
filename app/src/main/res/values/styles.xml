@@ -15,7 +15,7 @@
         <item name="colorPrimary">@color/colour_primary_dashboard</item>
         <item name="colorPrimaryDark">@color/colour_primary_dark_dashboard</item>
         <item name="android:windowBackground">@color/window_background_exercise</item>
-        <item name="colorAccent">@color/colour_accent</item>
+        <item name="colorAccent">@color/colour_accent_dashboard</item>
     </style>
 
 
