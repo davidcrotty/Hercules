@@ -38,6 +38,14 @@ class PlanActivity : AppCompatActivity() {
                 observer.addOnGlobalLayoutListener(listener)
             }
         }
+
+        bindListeners()
+    }
+
+    private fun bindListeners() {
+        done_button.setOnClickListener({
+            finish()
+        })
     }
 
     private fun revealActivity(x: Int, y: Int) {

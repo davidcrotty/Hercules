@@ -33,4 +33,30 @@
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/action_panel"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <Button
+            android:id="@+id/new_exercise_button"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/subtitle_text"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="@string/new_exercise"/>
+        <Button
+            android:id="@+id/done_button"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/colour_accent_dashboard"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:text="@string/done"/>
+    </LinearLayout>
+
 </android.support.constraint.ConstraintLayout>
