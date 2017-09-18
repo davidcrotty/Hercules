@@ -1,0 +1,32 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Design does not have a colour Primary and secondary in accordance to googles material guidelines
+        adapt both to be the window background for this activity -->
+        <item name="colorPrimary">@color/window_background_exercise</item>
+        <item name="colorPrimaryDark">@color/window_background_exercise</item>
+        <item name="android:windowBackground">@color/window_background_exercise</item>
+        <item name="colorAccent">@color/colour_accent</item>
+    </style>
+
+    <style name="DashboardTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Design does not have a colour Primary and secondary in accordance to googles material guidelines
+        adapt both to be the window background for this activity -->
+        <item name="colorPrimary">@color/colour_primary_dashboard</item>
+        <item name="colorPrimaryDark">@color/colour_primary_dark_dashboard</item>
+        <item name="colorAccent">@color/colour_accent_dashboard</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+    </style>
+
+    <style name="PlanTheme" parent="DashboardTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+</resources>

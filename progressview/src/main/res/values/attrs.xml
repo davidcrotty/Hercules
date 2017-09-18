@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RepProgress">
+        <attr name="state" format="enum">
+            <enum name="done" value="0"/>
+            <enum name="inprogress" value="1"/>
+            <enum name="pending" value="2"/>
+        </attr>
+    </declare-styleable>
+</resources>

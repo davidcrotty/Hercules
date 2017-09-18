@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Hercules</string>
+    <!-- Excersize Activity -->
+    <string name="plan_subtitle">%1$d sets of %2$d reps</string>
+    <string name="plan_next">Next: %1$d %2$s</string>
+    <string name="plan_done">Next: Done!</string>
+    <string name="title_activity_dashboard">DashboardActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <!-- Dashboard -->
+    <string name="reps_format">%1$d Reps</string>
+    <string name="weight_format">%1$d kg</string>
+    <string name="time_format">%1$ds</string>
+    <!-- Plan -->
+    <string name="create_a_plan">Create plan</string>
+    <string name="edit_upload">EDIT</string>
+    <string name="new_exercise">NEW EXERCISE</string>
+    <string name="done">DONE</string>
+    <string name="plan_name">Plan name</string>
+    <string name="mock_name">Bicep curls</string>
+    <string name="mock_rep">10 reps</string>
+    <string name="mock_weight">10 kg</string>
+    <string name="mock_time">30s</string>
+</resources>

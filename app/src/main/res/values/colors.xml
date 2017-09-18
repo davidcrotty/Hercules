@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- UnusedResources reason: color lightGreen is used in PieProgressView -->
+<resources tools:ignore="UnusedResources" xmlns:tools="http://schemas.android.com/tools">
+    <color name="colour_accent">#7FD219</color>
+    <color name="window_background_exercise">#1A2023</color>
+    <color name="title_text">#E5E7E7</color>
+    <color name="subtitle_text">#B8BCBE</color>
+    <color name="window_background_splash">#7FD219</color>
+
+    <!-- WCAG 2.0 Guidelines for icons/text and background colour deviates purposefully, see README.MD for details -->
+    <color name="colour_accent_dashboard">#68a512</color>
+    <color name="colour_primary_dashboard">#111c21</color>
+    <color name="colour_primary_dark_dashboard">#111c21</color>
+    <color name="card_background">#384247</color>
+    <color name="rep_text">#6c7c84</color>
+    <color name="action_panel">#0a161c</color>
+</resources>
