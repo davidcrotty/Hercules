@@ -37,6 +37,10 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, D
         bindListeners()
     }
 
+    override fun onBackPressed() {
+        return
+    }
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         return false
     }
