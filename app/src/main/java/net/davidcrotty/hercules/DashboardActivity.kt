@@ -1,7 +1,10 @@
 package net.davidcrotty.hercules
 
 
+import android.content.Intent
 import android.os.Bundle
+import android.support.v4.app.ActivityCompat
+import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -15,6 +18,11 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, D
 
     private var sectionsPagerAdapter: PlanAdapter? = null
     private lateinit var presenter: DashboardPresenter
+
+    companion object {
+        val REVEAL_X = "REVEAL_X"
+        val REVEAL_Y = "REVEAL_Y"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,7 +64,18 @@ class DashboardActivity : AppCompatActivity(), ViewPager.OnPageChangeListener, D
         })
         pager.addOnPageChangeListener(this)
         add_exercise.setOnClickListener({
-
+            startPlanActivity()
         })
+    }
+
+    private fun startPlanActivity() {
+        val options = ActivityOptionsCompat.makeSceneTransitionAnimation(this, add_exercise, "transition")
+        val revealX = (add_exercise.right + add_exercise.right) / 2
+        val revealY = (add_exercise.top + add_exercise.top) / 2
+
+        val intent = Intent(this, PlanActivity::class.java)
+        intent.putExtra(REVEAL_X, revealX)
+        intent.putExtra(REVEAL_Y, revealY)
+        ActivityCompat.startActivity(this, intent, options.toBundle())
     }
 }

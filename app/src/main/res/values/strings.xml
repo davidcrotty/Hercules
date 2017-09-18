@@ -11,4 +11,6 @@
     <string name="reps_format">%1$d Reps</string>
     <string name="weight_format">%1$d kg</string>
     <string name="time_format">%1$ds</string>
+    <!-- Plan -->
+    <string name="create_a_plan">Create plan</string>
 </resources>

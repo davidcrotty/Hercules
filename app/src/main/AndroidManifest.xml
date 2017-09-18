@@ -25,6 +25,11 @@
             android:label="@string/title_activity_dashboard"
             android:theme="@style/DashboardTheme">
         </activity>
+        <activity
+            android:name=".PlanActivity"
+            android:label="@string/title_activity_dashboard"
+            android:theme="@style/PlanTheme">
+        </activity>
     </application>
 
 </manifest>
