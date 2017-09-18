@@ -1,7 +1,5 @@
 package net.davidcrotty.hercules
 
-import android.R.attr.x
-import android.R.attr.y
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -21,6 +19,9 @@ class PlanActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plan)
+        setSupportActionBar(toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDefaultDisplayHomeAsUpEnabled(true)
 
         if(savedInstanceState == null &&
                 intent.hasExtra(DashboardActivity.REVEAL_Y) &&

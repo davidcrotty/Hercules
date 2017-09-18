@@ -27,7 +27,7 @@
         </activity>
         <activity
             android:name=".PlanActivity"
-            android:label="@string/title_activity_dashboard"
+            android:label="@string/create_a_plan"
             android:theme="@style/PlanTheme">
         </activity>
     </application>

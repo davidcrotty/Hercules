@@ -13,4 +13,5 @@
     <string name="time_format">%1$ds</string>
     <!-- Plan -->
     <string name="create_a_plan">Create plan</string>
+    <string name="edit_upload">EDIT</string>
 </resources>
